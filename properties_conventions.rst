@@ -1,3 +1,256 @@
 ==========================
 Properties/Conventions
 ==========================
+The GradleFx plugin provides some properties you can set in your build script. Most of them are using conventions, so you'll only need to specify them if you want to use your own values.
+
+The following sections describe the properties you can/have to specify in your build script(required means whether you have to specify it yourself):
+
+----------------------
+Standard Properties
+----------------------
+
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| Property Name               | Convention                 | Required | Description                                     |
++=============================+============================+==========+=================================================+
+| flexHome                    | FLEX_HOME environment      | false    | The location of your Flex SDK                   |
+|                             | var                        |          |                                                 |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| type                        | n/a                        | true     | Whether this is a library project or an         |
+|                             |                            |          | application. Possible values: 'swc' or 'swf'    |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| srcDirs                     | ['src/main/actionscript']  | false    | An array of source directories                  |
+|                             |                            |          |                                                 |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| resourceDirs                | ['src/main/resources']     | false    | An array of resource directories (used in the   |
+|                             |                            |          | copyresources task, or included in the SWC for  |
+|                             |                            |          | library projects)                               |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| testDirs                    | ['src/test/actionscript']  | false    | An array of test source directories             |
+|                             |                            |          |                                                 |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| testResourceDirs            | ['src/test/resources']     | false    | An array of test resource directories           |
+|                             |                            |          |                                                 |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| includeClasses              | null                       | false    | Equivalent of the include-classes compiler      |
+|                             |                            |          | option. Accepts a list of classnames            |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| includeSources              | null                       | false    | Equivalent of the include-sources compiler      |
+|                             |                            |          | option. Accepts a list of classfiles and/or     |
+|                             |                            |          | directories.                                    |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| frameworkLinkage            | 'external' for swc         | false    | How the Flex framework will be linked in the    |
+|                             | projects, 'rsl' for swf    |          | project: "external", "rsl", "merged" or "none"  |
+|                             | projects and 'none' for    |          |                                                 |
+|                             | pure as projects           |          |                                                 |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| additionalCompilerOptions   | []                         | false    | Additional compiler options you want to specify |
+|                             |                            |          | to the compc or mxmlc compiler. Can be like     |
+|                             |                            |          | ['-player-version=10', '-strict=false']         |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| fatSwc                      | null                       | false    | When set to true the asdoc information will be  |
+|                             |                            |          | embedded into the swc so that Adobe Flash       |
+|                             |                            |          | Builder can show the documentation              |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| localeDir                   | 'src/main/locale'          | false    | Defines the directory in which locale folders   |
+|                             |                            |          | are located like en_US etc.                     |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| locales                     | []                         | false    | The locales used by your application. Can be    |
+|                             |                            |          | something like ['en_US', 'nl_BE']               |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| mainClass                   | 'Main'                     | false    | This property is required for the mxmlc         |
+|                             |                            |          | compiler. It defines the main class of your     |
+|                             |                            |          | application. You can specify your own custom    |
+|                             |                            |          | file like 'org/myproject/MyApplication.mxml' or |
+|                             |                            |          | 'org.myproject.MyApplication'                   |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| output                      | ${project.name}            | false    | This is the name of the swc/swf that will be    |
+|                             |                            |          | generated by the compile task                   |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| jvmArguments                | []                         | false    | You can use this property to specify jvm        |
+|                             |                            |          | arguments which are used during the compile     |
+|                             |                            |          | task. Only one jvm argument per array item: e.g.|
+|                             |                            |          | jvmArguments = ['-Xmx1024m','-Xms512m']         |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| playerVersion               | '10.0'                     | false    | Defines the flash player version                |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| htmlWrapper                 | complex property           | false    | This is a complex property which contains       |
+|                             |                            |          | properties for the createHtmlWrapper task       |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| flexUnit                    | complex property           | false    | This is a complex property which contains       |
+|                             |                            |          | properties for the flexUnit task                |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| air                         | complex property           | false    | This is a complex property which contains       |
+|                             |                            |          | properties for AIR projects                     |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+| asdoc                       | complex property           | false    | This is a complex property which contains       |
+|                             |                            |          | properties for the asdoc task                   |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
+
+ .. note:: All the available compiler options for the mxmlc and compc compiler are available
+      here `Compc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a92.html>`_
+      , `Mxmlc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a80.html>`_
+
+--------------------
+Complex properties
+--------------------
+^^^^^^^^^^^^^^^
+air
+^^^^^^^^^^^^^^^
+
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| Property Name               | Convention                                         | Required | Description                                     |
++=============================+====================================================+==========+=================================================+
+| keystore                    | "${project.name}.p12"                              | false    | The name of the certificate which will be used  |
+|                             |                                                    |          | to sign the air package. Uses the project name  |
+|                             |                                                    |          | by convention.                                  |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| storepass                   | null                                               | true     | The password of the certificate                 |
+|                             |                                                    |          |                                                 |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| applicationDescriptor       | "/src/main/actionscript/${project.name}.xml"       | false    | The location of the air descriptor file. Uses   |
+|                             |                                                    |          | the project name by convention for this file.   |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| includeFileTrees            | null                                               | false    | A list of FileTree objects which reference the  |
+|                             |                                                    |          | files to include into the AIR package, like     |
+|                             |                                                    |          | application icons which are specified in your   |
+|                             |                                                    |          | application descriptor. Can look like this:     |
+|                             |                                                    |          | air.includeFileTrees = [fileTree(dir:           |
+|                             |                                                    |          | 'src/main/actionscript/', include:              |
+|                             |                                                    |          | 'assets/appIcon.png')]                          |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+
+^^^^^^^^^^^^^^^
+htmlWrapper
+^^^^^^^^^^^^^^^
+
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| Property Name               | Convention                                         | Required | Description                                     |
++=============================+====================================================+==========+=================================================+
+| title                       | project.description                                | false    | The title of the html page                      |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| file                        | "${project.name}.html"                             | false    | Name of the html file                           |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| height                      | '100%'                                             | false    | Height of the swf in the html page              |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| width                       | '100%'                                             | false    | Width of the swf in the html page               |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| application                 | project.name                                       | false    | Name of the swf object in the HTML wrapper      |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| swf                         | project.name                                       | false    | The name of the swf that is embedded in the HTML|
+|                             |                                                    |          | page. The '.swf' extension is added             |
+|                             |                                                    |          | automatically, so you don't need to specify it. |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| history                     | 'true'                                             | false    | Set to true for deeplinking support.            |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| output                      | project.buildDir                                   | false    | Directory in which the html wrapper will be     |
+|                             |                                                    |          | generated.                                      |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+
+
+^^^^^^^^^^^^^^^
+flexUnit
+^^^^^^^^^^^^^^^
+(Since GradleFx uses the FlexUnit ant tasks it also uses the same properties, more information about the properties specified in this table can be found in the "Property Descriptions" section on this page: http://docs.flexunit.org/index.php?title=Ant_Task)
+
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| Property Name               | Convention                                         | Required | Description                                        |
++=============================+====================================================+==========+====================================================+
+| player                      | 'flash'                                            | false    | Whether to execute the test SWF against the        |
+|                             |                                                    |          | Flash Player or ADL. See the "Property             |
+|                             |                                                    |          | Descriptions" section on this page for more        |
+|                             |                                                    |          | information:                                       |
+|                             |                                                    |          | http://docs.flexunit.org/index.php?title=Ant_Task  |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| command                     | FLASH_PLAYER_EXE environment variable              | false    | The path to the Flash player executable which will |
+|                             |                                                    |          | be used to run the tests                           |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| swf                         | "${project.buildDirName}/${testOutput}.swf"        | false    | Location of the generated swf files which runs the |
+|                             |                                                    |          | tests                                              |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| toDir                       | "${project.buildDirName}/reports"                  | false    | Directory to which the test result reports are     |
+|                             |                                                    |          | written                                            |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| workingDir                  | project.path                                       | false    | Directory to which the task should copy the        |
+|                             |                                                    |          | resources created during compilation.              |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| haltonfailure               | 'false'                                            | false    | Whether the execution of the tests should stop once|
+|                             |                                                    |          | a test has failed                                  |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| verbose                     | 'false'                                            | false    | Whether the tasks should output information about  |
+|                             |                                                    |          | the test results                                   |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| localTrusted                | 'true'                                             | false    | The path specified in the 'swf' property is added  |
+|                             |                                                    |          | to the local FlashPlayer Trust when this property  |
+|                             |                                                    |          | is set to true.                                    |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| port                        | '1024'                                             | false    | On which port the task should listen for test      |
+|                             |                                                    |          | results                                            |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| buffer                      | '262144'                                           | false    | Data buffer size (in bytes) for incoming           |
+|                             |                                                    |          | communication from the Flash movie to the task.    |
+|                             |                                                    |          | Default should in general be enough, you could     |
+|                             |                                                    |          | possibly increase this if your tests have lots of  |
+|                             |                                                    |          | failures/errors.                                   |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| timeout                     | '60000'                                            | false    | How long (in milliseconds) the task waits for a    |
+|                             |                                                    |          | connection with the Flash player                   |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| failureproperty             | 'flexUnitFailed'                                   | false    | If a test fails, this property will be set to true |
+|                             |                                                    |          |                                                    |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| headless                    | 'false'                                            | false    | Allows the task to run headless when set to true.  |
+|                             |                                                    |          |                                                    |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| display                     | '99'                                               | false    | The base display number used by Xvnc when running  |
+|                             |                                                    |          | in headless mode.                                  |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| includes                    | ['**/*Test.as']                                    | false    | Defines which test classes are executed when       |
+|                             |                                                    |          | running the tests                                  |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| excludes                    | []                                                 | false    | Defines which test classes are excluded from       |
+|                             |                                                    |          | execution when running the tests                   |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+
+^^^^^^^^^^^^^^^
+asdoc
+^^^^^^^^^^^^^^^
+
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| Property Name               | Convention                                         | Required | Description                                        |
++=============================+====================================================+==========+====================================================+
+| outputDir                   | 'doc'                                              | false    | The directory in which the asdoc documentation     |
+|                             |                                                    |          | will be created                                    |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| additionalASDocOptions      | []                                                 | false    | Additional options for the asdoc compiler.         |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+
+.. note:: All the available asdoc options (for Flex 4.6) can be found here: `asdoc compiler options <http://help.adobe.com/en_US/flex/using/WSd0ded3821e0d52fe1e63e3d11c2f44bc36-7ffa.html#WSd0ded3821e0d52fe1e63e3d11c2f44bb7b-7feb>`_
+
+------------------------------
+Example usage (build.gradle)
+------------------------------
+::
+
+    buildscript {
+        repositories {
+            mavenLocal()
+        }
+        dependencies {
+            classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5'
+        }
+    }
+
+    apply plugin: 'gradlefx'
+
+    flexHome = System.getenv()['FLEX_SDK_LOCATION'] //take a custom environment variable which contains the Flex SDK location
+
+    srcDirs = ['/src/main/flex']
+
+    additionalCompilerOptions = [
+      '-player-version=10',
+      '-strict=false'
+    ]
+
+    htmlWrapper.title = 'My Page Title'
+    htmlWrapper.height = '80%'
+    htmlWrapper.width = '80%'

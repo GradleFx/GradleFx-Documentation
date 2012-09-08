@@ -16,8 +16,8 @@ Contents:
    dependency_management
    tasks
    air
-   flexUnit
-   asDoc
+   flexunit
+   asdoc
    localization
    ide_plugin
    templates_plugin
