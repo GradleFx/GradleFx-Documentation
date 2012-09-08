@@ -11,6 +11,18 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   basic_setup
+   properties_conventions
+   dependency_management
+   tasks
+   air
+   flexUnit
+   asDoc
+   localization
+   ide_plugin
+   templates_plugin
+
+
 
 
 Indices and tables
