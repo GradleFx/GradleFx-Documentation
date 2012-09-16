@@ -1,5 +1,4 @@
-GradleFx-Documentation
-======================
+h1. GradleFx-Documentation
 
 The documentation of GradleFx in Sphinx format
 
@@ -16,9 +15,11 @@ h2. Usage
 h3. Building the html documentation 
 
 Use the following command to build the html documentation. The result can be found in _build/html.
+
 @$ make html@
 
 h3. Update the documentation version number
+
 The version can be incremented by changing the 'version' and 'release' properties in the conf.py file. These two properties should have the same version number.
 
 
