@@ -23,14 +23,18 @@ Customizing the asdoc generation
 GradleFx also provides some properties which can be used to customize the asdoc generation.
 One of them is the asdoc.outputDir property, which allows you to specify a different destination directory for the asdoc documentation. This property can be used as follows: ::
 
-    asdoc.outputDir = 'documentation' //will create the documentation in the %projectdir%/documentation folder
+    asdoc {
+		outputDir	'documentation' //will create the documentation in the %projectdir%/documentation folder
+	}
 
 Another property which allows the most customization is the asdoc.additionalASDocOptions property. It can be used like the additionalCompilerOptions, but this one accepts asdoc compiler options.
 These options can be found here (for Flex 4.6): `asDoc compiler options <http://help.adobe.com/en_US/flex/using/WSd0ded3821e0d52fe1e63e3d11c2f44bc36-7ffa.html#WSd0ded3821e0d52fe1e63e3d11c2f44bb7b-7feb>`_
 
 The property can be used as follows: ::
 
-    asdoc.additionalASDocOptions = [
-        '-strict=false',
-        '-left-frameset-width 200'
-    ]
+    asdoc {
+		additionalASDocOptions = [
+			'-strict=false',
+			'-left-frameset-width 200'
+		]
+	}

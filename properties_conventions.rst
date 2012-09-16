@@ -43,6 +43,9 @@ Standard Properties
 |                             | projects and 'none' for    |          |                                                 |
 |                             | pure as projects           |          |                                                 |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
+| useDebugRSLSwfs             | false                      | false    | Wether to use the debug framework rsl's when    |
+|                             |                            |          | frameworkLinkage is rsl                         |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
 | additionalCompilerOptions   | []                         | false    | Additional compiler options you want to specify |
 |                             |                            |          | to the compc or mxmlc compiler. Can be like     |
 |                             |                            |          | ['-player-version=10', '-strict=false']         |
@@ -130,9 +133,9 @@ htmlWrapper
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 | file                        | "${project.name}.html"                             | false    | Name of the html file                           |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
-| height                      | '100%'                                             | false    | Height of the swf in the html page              |
+| percentHeight               | '100'                                              | false    | Height of the swf in the html page              |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
-| width                       | '100%'                                             | false    | Width of the swf in the html page               |
+| percentWidth                | '100'                                              | false    | Width of the swf in the html page               |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 | application                 | project.name                                       | false    | Name of the swf object in the HTML wrapper      |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
@@ -145,7 +148,10 @@ htmlWrapper
 | output                      | project.buildDir                                   | false    | Directory in which the html wrapper will be     |
 |                             |                                                    |          | generated.                                      |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
-
+| expressInstall              | 'true'                                             | false    | use express install                             |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| versionDetection            | 'true'                                             | false    | use version detection                           |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
 flexUnit
@@ -251,6 +257,8 @@ Example usage (build.gradle)
       '-strict=false'
     ]
 
-    htmlWrapper.title = 'My Page Title'
-    htmlWrapper.height = '80%'
-    htmlWrapper.width = '80%'
+    htmlWrapper {
+		title		'My Page Title'
+		percentHeight	'80'
+		percentWidth	'80'
+	}
