@@ -12,6 +12,9 @@ Standard Properties
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | Property Name               | Convention                 | Required | Description                                     |
 +=============================+============================+==========+=================================================+
+| gradleFxUserHomeDir         | %GRADLE_USER_HOME%/gradleFx| false    | The location where GradleFx will store GradleFx |
+|                             |                            |          | specific files (e.g. installed SDK's)           |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
 | flexHome                    | FLEX_HOME environment      | false    | The location of your Flex SDK                   |
 |                             | var                        |          |                                                 |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
@@ -43,7 +46,7 @@ Standard Properties
 |                             | projects and 'none' for    |          |                                                 |
 |                             | pure as projects           |          |                                                 |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
-| useDebugRSLSwfs             | false                      | false    | Wether to use the debug framework rsl's when    |
+| useDebugRSLSwfs             | false                      | false    | Whether to use the debug framework rsl's when   |
 |                             |                            |          | frameworkLinkage is rsl                         |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | additionalCompilerOptions   | []                         | false    | Additional compiler options you want to specify |
@@ -88,6 +91,9 @@ Standard Properties
 | asdoc                       | complex property           | false    | This is a complex property which contains       |
 |                             |                            |          | properties for the asdoc task                   |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
+| sdkAutoInstall              | complex property           | false    | This is a complex property which contains       |
+|                             |                            |          | properties for the SDK auto install feature     |
++-----------------------------+----------------------------+----------+-------------------------------------------------+
 
  .. note:: All the available compiler options for the mxmlc and compc compiler are available
       here `Compc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a92.html>`_
@@ -110,7 +116,7 @@ air
 | storepass                   | null                                               | true     | The password of the certificate                 |
 |                             |                                                    |          |                                                 |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
-| applicationDescriptor       | "/src/main/actionscript/${project.name}.xml"       | false    | The location of the air descriptor file. Uses   |
+| applicationDescriptor       | "src/main/actionscript/${project.name}.xml"        | false    | The location of the air descriptor file. Uses   |
 |                             |                                                    |          | the project name by convention for this file.   |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 | includeFileTrees            | null                                               | false    | A list of FileTree objects which reference the  |
@@ -228,6 +234,18 @@ asdoc
 |                             |                                                    |          | will be created                                    |
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | additionalASDocOptions      | []                                                 | false    | Additional options for the asdoc compiler.         |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+
+^^^^^^^^^^^^^^^
+sdkAutoInstall
+^^^^^^^^^^^^^^^
+
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| Property Name               | Convention                                         | Required | Description                                        |
++=============================+====================================================+==========+====================================================+
+| showPrompts                 | true                                               | false    | Whether to show prompts during the installation    |
+|                             |                                                    |          | or let it run in full auto mode. Make sure you     |
+|                             |                                                    |          | agree with all the licenses before turning this off|
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 
 .. note:: All the available asdoc options (for Flex 4.6) can be found here: `asdoc compiler options <http://help.adobe.com/en_US/flex/using/WSd0ded3821e0d52fe1e63e3d11c2f44bc36-7ffa.html#WSd0ded3821e0d52fe1e63e3d11c2f44bb7b-7feb>`_

@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    basic_setup
+   sdk_auto_install
    properties_conventions
    dependency_management
    tasks
