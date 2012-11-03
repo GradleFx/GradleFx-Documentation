@@ -19,6 +19,8 @@ What basically happens when you declare the dependency is this:
 
 GradleFx will always install the AIR SDK in the same directory as the Flex SDK.
 
+ .. note:: A sample project which uses the auto-install feature can be found here: `Auto-install sample <https://github.com/GradleFx/GradleFx-Examples/blob/develop/sdk-autoinstall/build.gradle>`_
+
 ----------------
 Dependency types
 ----------------
