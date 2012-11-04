@@ -25,12 +25,16 @@ To use the plugin in your project, you'll have to add the following to your buil
 
 Make sure that the buildscript structure is at the top of your build file.
 
---------------------------
-Setting up the Flex SDK
---------------------------
-You'll need the Flex SDK installed on your computer. GradleFx uses the FLEX_HOME environment variable by convention, this should point to your Flex SDK installation. If you don't want to use this convention you can just override this default by doing this:::
+---------------------------
+Setting up the Flex/Air SDK
+---------------------------
+GradleFx gives you several options to specify the Flex/AIR SDK:
+	1. set the FLEX_HOME environment variable (convention), this should point to your Flex/AIR SDK installation.
+	2. set the flexHome convention property to the location of your Flex/AIR SDK ::
 
-    flexHome = C:\my\path\to\the\flex\sdk
+		flexHome = "C:/my/path/to/the/flex/sdk"
+	
+	3. specify the Flex/AIR SDK as a dependency. See :doc:`sdk_auto_install`
 
 -----------------------------
 Defining the project type

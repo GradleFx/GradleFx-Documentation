@@ -1,0 +1,25 @@
+h1. GradleFx-Documentation
+
+The documentation of GradleFx in Sphinx format
+
+h2. Installation
+
+# Download and install the latest 2.x release of Python: http://www.python.org/download/
+# Install setuptools 
+## download the ez_setup.py file (from http://pypi.python.org/pypi/setuptools#windows) for 64-bit Python installations and double click on it to execute it.
+## add the %PYTHON_HOME%/Scripts directory to the PATH environment variable
+# Install Sphinx by executing the following command on the command line: easy_install -U Sphinx
+
+h2. Usage
+
+h3. Building the html documentation 
+
+Use the following command to build the html documentation. The result can be found in _build/html.
+
+@$ make html@
+
+h3. Update the documentation version number
+
+The version can be incremented by changing the 'version' and 'release' properties in the conf.py file. These two properties should have the same version number.
+
+

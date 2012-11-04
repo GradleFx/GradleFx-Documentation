@@ -62,11 +62,15 @@ Include/Exclude test classes
 You can include or exclude test classes which are being run by specifying a pattern to some GradleFx properties.
 To specify the includes you can use the flexUnit.includes property: ::
 
-    flexUnit.includes = ['**/Test*.as'] //will include all actionscript classes which start with 'Test'
+    flexUnit {
+		includes = ['**/Test*.as'] //will include all actionscript classes which start with 'Test'
+	}
 
 To specify the excludes you can use the flexUnit.excludes property: ::
 
-    flexUnit.excludes = ['**/*IntegrationTest.as']
+    flexUnit {
+		excludes = ['**/*IntegrationTest.as']
+	}
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Other customizations

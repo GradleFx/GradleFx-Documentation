@@ -13,7 +13,7 @@ The GradleFx plugin adds the following tasks to your project:
 | clean                       | n/a                                                | Deletes the build directory                                   |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| compile                     | copyresources                                      | Creates a swc or swf file from your code. The 'type' property |
+| compileFlex                 | copyresources                                      | Creates a swc or swf file from your code. The 'type' property |
 |                             |                                                    | defines the type of file                                      |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 | package                     | compile                                            | Packages the generated swf file into an .air package          |
@@ -61,13 +61,10 @@ Adding additional logic
 -------------------------
 Sometimes you may want to add custom logic right after or before a task has been executed. If you want to add some logging before or after the compile task, you can just do this: ::
 
-    project.afterEvaluate {
-       compile.doFirst {
-          println "this gets printed before the compile task starts"
-       }
-
-       compile.doLast {
-          println "this gets printed after the compile task has been completed"
-       }
+    compile.doFirst {
+		println "this gets printed before the compile task starts"
     }
-The afterEvaluate statement is needed because most of the GradleFx tasks are added during this phase, so they won't be available during the beginning of the configuration phase. Most of the GradleFx tasks are added after the project's properties are evaluated because they depend on these properties to decide what to do, like for example the package task which is only added when you specified 'air' as the project's type.
+
+	compile.doLast {
+		println "this gets printed after the compile task has been completed"
+	}
