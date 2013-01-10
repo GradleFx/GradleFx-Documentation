@@ -18,6 +18,7 @@ Contents:
    tasks
    air
    flexunit
+   html_wrapper
    asdoc
    localization
    ide_plugin

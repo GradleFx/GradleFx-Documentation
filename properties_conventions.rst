@@ -158,6 +158,21 @@ htmlWrapper
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 | versionDetection            | 'true'                                             | false    | use version detection                           |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| source                      | null                                               | false    | The relative path to your custom html template  |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| tokenReplacements           |[                                                   | false    | A map of tokens which will be replaced in your  |
+|                             |   application:    wrapper.application,             |          | custom template. The keys have to be specified  |
+|                             |                                                    |          | as ${key} in your template                      |
+|                             |   percentHeight:  "$wrapper.percentHeight%",       |          |                                                 |
+|                             |                                                    |          |                                                 |
+|                             |   percentWidth:   "$wrapper.percentWidth%",        |          |                                                 |
+|                             |                                                    |          |                                                 |
+|                             |   swf:            wrapper.swf,                     |          |                                                 |
+|                             |                                                    |          |                                                 |
+|                             |   title:          wrapper.title                    |          |                                                 |
+|                             |]                                                   |          |                                                 |
+|                             |                                                    |          |                                                 |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
 flexUnit
