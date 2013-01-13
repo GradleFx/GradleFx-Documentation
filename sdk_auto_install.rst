@@ -34,7 +34,7 @@ Maven/Ivy Dependency
 If you have deployed the SDK archives to a Maven/Ivy repository then you can specify them like this: ::
 
     dependencies {
-	    flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.8.0', ext: 'zip'
+	    flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.0', ext: 'zip'
 	    airSDK  group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: 'zip'
 	}
 	
@@ -48,8 +48,8 @@ For example for the Apache Flex SDK this would be something like this: ::
 	repositories {
 		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
 			name = 'Apache'
-			// pattern for url http://apache.cu.be/incubator/flex/4.8.0-incubating/binaries/apache-flex-sdk-4.8.0-incubating-bin.zip
-			addArtifactPattern 'http://apache.cu.be/incubator/flex/4.8.0-incubating/binaries/[module]-[revision]-incubating-bin.[ext]'
+			// pattern for url http://apache.cu.be/flex/4.9.0/binaries/apache-flex-sdk-4.9.0-bin.zip
+			addArtifactPattern 'http://apache.cu.be/flex/4.9.0/binaries/[module]-[revision]-bin.[ext]'
 		}
 	}
 	
@@ -57,7 +57,7 @@ Always make sure to replace the artifact name, version and extension type with [
 Once you've defined the pattern you can define the dependencies like this: ::
 
     dependencies {
-	    flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.8.0', ext: 'zip'
+	    flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.0', ext: 'zip'
 	    airSDK  group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: 'zip'
 	}
 	
