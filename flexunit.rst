@@ -24,7 +24,7 @@ First you need to specify the FlexUnit dependencies. You can download the requir
                    "${flexunitHome}/flexUnitTasks-4.1.0-8.jar",
                    "${flexunitHome}/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc")
     }
-Then you'll need to specify the location of the Flash Player executable. GradleFx uses the FLASH_PLAYER_EXE environment variable by convention which should contain the path to the executable. If you don't want to use this environment variable you can override this with the 'flexunit.command' property. You can download the executable from here (these links may get out of date, look for the Flash Player standalone/projector builds on the Adobe site):
+Then you'll need to specify the location of the Flash Player executable. GradleFx uses the FLASH_PLAYER_EXE environment variable by convention which should contain the path to the executable. If you don't want to use this environment variable you can override this with the 'flexUnit.command' property. You can download the executable from here (these links may get out of date, look for the Flash Player standalone/projector builds on the Adobe site):
 
 * `For Windows <http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_sa_debug.exe>`_
 * `For Mac <http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_sa_debug.app.zip>`_
@@ -42,6 +42,13 @@ GradleFx will by convention execute all the *Test.as classes in the test source 
 Running the tests
 -------------------
 You can run the FlexUnit tests by executing the "gradle test" command on the command-line.
+
+-------------------
+Skipping the tests
+-------------------
+In case you want to execute a task which depends on the test task, but you don't want to execute the tests, then you can skip the test execution by excluding the test task with the '-x test' parameter. Like this: ::
+
+    > gradle build -x test
 
 ---------------
 Customization
