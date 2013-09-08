@@ -47,7 +47,7 @@ With all conventions this will result in the following output for a ``swf`` proj
 Application descriptor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In an ``air`` or ``mobile`` project an application descriptor file will also be created: ::
+In an ``air`` or ``mobile`` project an application descriptor file will also be created based on the air.applicationDescriptor property: ::
 
     src/main/actionscript/Main-app.xml
 
