@@ -22,16 +22,19 @@ The GradleFx plugin adds the following tasks to your project:
 | copyresources               | n/a                                                | Copies the resources from the source 'resources' directory    |
 |                             |                                                    | to the build directory                                        |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
+| copytestresources           | n/a                                                | Copies the test resources from the test 'resources'           |
+|                             |                                                    | directory to the build directory                              |
++-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 | publish                     | n/a                                                | Copies the files from the build directory to the publish      |
 |                             |                                                    | directory.                                                    |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 | createHtmlWrapper           | n/a                                                | Creates an HTML wrapper for the project's swf                 |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| test                        | testCompile                                        | Runs the FlexUnit tests                                       |
+| test                        | copytestresources                                  | Runs the FlexUnit tests                                       |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| asdoc                       | testCompile                                        | Creates asdoc documentation for your sources                  |
+| asdoc                       | compile                                            | Creates asdoc documentation for your sources                  |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 
