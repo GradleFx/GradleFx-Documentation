@@ -17,7 +17,7 @@ To use the plugin in your project, you'll have to add the following to your buil
             mavenCentral()
         }
         dependencies {
-            classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5'
+            classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.7'
         }
     }
 
@@ -43,6 +43,7 @@ Defining the project type
 | **swc**: a library project of which the sources will be packaged into a swc file
 | **swf**: a Flex web project of which the sources will be packaged into a swf file.
 | **air**: a Flex web project of which the sources will be packaged into a air file.
+| **mobile**: a Flex mobile project of which the sources will be packaged into an apk or ipa file.
 
 example project type definition: ::
 
