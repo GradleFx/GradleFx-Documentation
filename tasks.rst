@@ -40,25 +40,25 @@ The GradleFx plugin adds the following tasks to your project:
 | packageMobile               | compile                                            | Packages the mobile app for a release version.                |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| packageSimulatorMobileApp   | compile                                            | Packages the mobile app for the simulator.                    |
+| packageSimulatorMobile      | compile                                            | Packages the mobile app for the simulator.                    |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| installMobileApp            | uninstallMobileApp                                 | install app to target device                                  |
+| installMobile               | uninstallMobileApp                                 | install app to target device                                  |
 |                             | packageMobile                                      |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| installSimulatorMobileApp   | uninstallSimulatorMobileApp                        | Installs the app on the simulator.                            |
+| installSimulatorMobile      | uninstallSimulatorMobileApp                        | Installs the app on the simulator.                            |
 |                             | packageSimulatorMobileApp                          |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| uninstallMobileApp          |                                                    | Uninstalls the app from the device.                           |
+| uninstallMobile             |                                                    | Uninstalls the app from the device.                           |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| uninstallSimulatorMobileApp |                                                    | Uninstalls the app from the simulator.                        |
+| uninstallSimulatorMobile    |                                                    | Uninstalls the app from the simulator.                        |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| launchMobileApp             | installMobileApp                                   | Launches the app to a certain device.                         |
+| launchMobile                | installMobileApp                                   | Launches the app to a certain device.                         |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| launchSimulatorMobileApp    | installSimulatorMobileApp                          | Launches the app on the simulator.                            |
+| launchSimulatorMobile       | installSimulatorMobileApp                          | Launches the app on the simulator.                            |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 | launchAdl                   | compile                                            | Task which launches ADL.                                      |
