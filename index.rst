@@ -17,6 +17,7 @@ Contents:
    dependency_management
    tasks
    air
+   mobile
    flexunit
    html_wrapper
    asdoc
