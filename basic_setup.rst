@@ -5,7 +5,7 @@ Basic Setup
 --------------
 Requirements
 --------------
-* Gradle v1.0
+* Gradle v1.6
 
 ----------------------------------
 Using the plugin in your project
