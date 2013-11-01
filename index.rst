@@ -11,6 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   where_to_start
    basic_setup
    sdk_auto_install
    properties_conventions
