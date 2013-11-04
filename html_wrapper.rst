@@ -23,9 +23,9 @@ Customization
 You can customize the conventions by overriding the htmlWrapper properties, like this: ::
 
     htmlWrapper {
-		title		'My Page Title'
-		percentHeight	'80'
-		percentWidth	'80'
+		title         = 'My Page Title'
+		percentHeight =	80
+		percentWidth  =	80
 	}
 	
 .. note:: For a full list of htmlWrapper properties, visit the properties section: :doc:`properties_conventions`
@@ -38,8 +38,8 @@ tokenReplacements is map of replacements for tokens in the provided source file.
 You can use this as follows: ::
 
     htmlWrapper {
-		source		'myCustomTemplate.html'
-		tokenReplacements [swf:example]
+		source            = 'myCustomTemplate.html'
+		tokenReplacements = [swf:example]
 	}    
 
 
