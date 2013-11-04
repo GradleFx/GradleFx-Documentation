@@ -372,7 +372,7 @@ Example usage (build.gradle)
     ]
 
     htmlWrapper {
-		title		'My Page Title'
-		percentHeight	'80'
-		percentWidth	'80'
+		title         = 'My Page Title'
+		percentHeight =	80
+		percentWidth  =	80
 	}
