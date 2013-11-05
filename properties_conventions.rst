@@ -55,7 +55,7 @@ Standard Properties
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | additionalCompilerOptions   | []                         | false    | Additional compiler options you want to specify |
 |                             |                            |          | to the compc or mxmlc compiler. Can be like     |
-|                             |                            |          | ['-player-version=10', '-strict=false']         |
+|                             |                            |          | ['-target-player=10', '-strict=false']          |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | fatSwc                      | null                       | false    | When set to true the asdoc information will be  |
 |                             |                            |          | embedded into the swc so that Adobe Flash       |
