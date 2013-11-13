@@ -49,7 +49,7 @@ For example for the Apache Flex SDK this would be something like this: ::
 		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
 			name = 'Apache'
 			// pattern for url http://apache.cu.be/flex/4.9.0/binaries/apache-flex-sdk-4.9.0-bin.zip
-			addArtifactPattern 'http://apache.cu.be/flex/4.9.0/binaries/[module]-[revision]-bin.[ext]'
+			addArtifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
 		}
 	}
 	
