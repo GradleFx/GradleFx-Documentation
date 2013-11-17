@@ -46,10 +46,10 @@ You can also specify the SDK by referencing a URL. To do this you need to define
 For example for the Apache Flex SDK this would be something like this: ::
 
 	repositories {
-		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
-			name = 'Apache'
+		ivy {
+			name 'Apache'
 			// pattern for url http://apache.cu.be/flex/4.9.0/binaries/apache-flex-sdk-4.9.0-bin.zip
-			addArtifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+			artifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
 		}
 	}
 	
