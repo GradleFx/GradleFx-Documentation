@@ -263,6 +263,9 @@ flexUnit
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | Property Name               | Convention                                         | Required | Description                                        |
 +=============================+====================================================+==========+====================================================+
+| template                    | Uses the internal template provided by GradleFx    | false    | The path to your test runner template relative     |
+|                             |                                                    |          | from the project directory                         |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | player                      | 'flash'                                            | false    | Whether to execute the test SWF against the        |
 |                             |                                                    |          | Flash Player or ADL. See the "Property             |
 |                             |                                                    |          | Descriptions" section on this page for more        |
@@ -271,9 +274,6 @@ flexUnit
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | command                     | FLASH_PLAYER_EXE environment variable              | false    | The path to the Flash player executable which will |
 |                             |                                                    |          | be used to run the tests                           |
-+-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
-| swf                         | "${project.buildDirName}/${testOutput}.swf"        | false    | Location of the generated swf files which runs the |
-|                             |                                                    |          | tests                                              |
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | toDir                       | "${project.buildDirName}/reports"                  | false    | Directory to which the test result reports are     |
 |                             |                                                    |          | written                                            |
@@ -317,6 +317,12 @@ flexUnit
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | excludes                    | []                                                 | false    | Defines which test classes are excluded from       |
 |                             |                                                    |          | execution when running the tests                   |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| swfName                     | "TestRunner.swf"                                   | false    | the name you want to give to the resulting test    |
+|                             |                                                    |          | runner application                                 |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| additionalCompilerOptions   | []                                                 | false    | A list of custom compiler options for the test     |
+|                             |                                                    |          | runner application                                 |
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
