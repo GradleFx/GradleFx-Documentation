@@ -18,7 +18,7 @@ To use the plugin in your project, you'll have to add the following to your buil
             mavenCentral()
         }
         dependencies {
-            classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.7.1'
+            classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.8.1'
         }
     }
 
