@@ -73,14 +73,14 @@ You can include or exclude test classes which are being run by specifying a patt
 To specify the includes you can use the flexUnit.includes property: ::
 
     flexUnit {
-		includes = ['**/Test*.as'] //will include all actionscript classes which start with 'Test'
-	}
+        includes = ['**/Test*.as'] //will include all actionscript classes which start with 'Test'
+    }
 
 To specify the excludes you can use the flexUnit.excludes property: ::
 
     flexUnit {
-		excludes = ['**/*IntegrationTest.as']
-	}
+        excludes = ['**/*IntegrationTest.as']
+    }
 	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Use a custom test runner template
@@ -96,8 +96,8 @@ This template accepts two parameters:
 Once you've created your template, you can specify it in your build script: ::
 
     flexUnit {
-		template = 'src/test/resources/CustomFlexUnitRunner.mxml'
-	}	
+        template = 'src/test/resources/CustomFlexUnitRunner.mxml'
+    }	
 	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Add custom compiler options
@@ -106,10 +106,19 @@ In some cases you want to specify custom compiler options to your test applicati
 You can do this by using the flexUnit.additionalCompilerOptions property: ::
 
     flexUnit {
-		additionalCompilerOptions = [
-			'-incremental=true',
-		]
-	}
+        additionalCompilerOptions = [
+            '-incremental=true',
+        ]
+    }
+	
+^^^^^^^^^^^^^^^^^^^^^^^
+Ignoring test failures
+^^^^^^^^^^^^^^^^^^^^^^^
+By default, when a test fails the build will fail. If you want to ignore test failures, then you can do this with the following property: ::
+
+    flexUnit {
+        ignoreFailures = true
+    }    
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Other customizations

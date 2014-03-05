@@ -55,9 +55,25 @@ In most cases you will want to add some files to your AIR package, like applicat
 Only specifying those icons in your application descriptor won't do it for the compiler, so you need to provide them to it. With GradleFx you can do that with the includeFileTrees property, which looks like this: ::
 
     air {
-		includeFileTrees = [
-			fileTree(dir: 'src/main/actionscript/', include: 'assets/appIcon.png')
-		]
-	}
+        includeFileTrees = [
+            fileTree(dir: 'src/main/actionscript/', include: 'assets/appIcon.png')
+        ]
+    }
 
 You have to make sure that the 'include' part always has the same name as the one specified in your application descriptor, otherwise the compiler won't recognize it. The fileTree also accepts patterns and multiple includes, more info about this can be found in the Gradle documentation: http://gradle.org/docs/current/userguide/working_with_files.html
+
+^^^^^^^^^^^^^^^^^^^^^^^
+More flexible approach
+^^^^^^^^^^^^^^^^^^^^^^^
+
+While the benefit of the includeFileTrees option may be its convenience, it may not always fit your needs. Certainly when you need to add a lot of files to your build.
+The number of paths you can specify is limited by the air packager, and since the includeFileTrees always adds individual paths instead of directories, this can potentially reach the maximum and cause a packager error.
+You can avoid this by manually specifying the compiler options to add individual directories instead of files, with the air.fileOptions property: ::
+
+    air {
+        fileOptions = [
+            '-C',
+            'src/main/actionscript/',
+            'sound'
+        ]
+    } 

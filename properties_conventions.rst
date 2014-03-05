@@ -131,6 +131,14 @@ air
 |                             |                                                    |          | 'src/main/actionscript/', include:              |
 |                             |                                                    |          | 'assets/appIcon.png')]                          |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| fileOptions                 | []                                                 | false    | Similar to includeFileTrees, but allows more    |
+|                             |                                                    |          | flexibility without the convenience of a        |
+|                             |                                                    |          | FileTree. It's most important use is to specify |
+|                             |                                                    |          | directories instead of individual files.        |
+|                             |                                                    |          | air.fileOptions = ['-C',                        |
+|                             |                                                    |          | 'src/main/actionscript/',                       |
+|                             |                                                    |          | 'sound']                                        |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
 airMobile
@@ -323,6 +331,9 @@ flexUnit
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 | additionalCompilerOptions   | []                                                 | false    | A list of custom compiler options for the test     |
 |                             |                                                    |          | runner application                                 |
++-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
+| ignoreFailures              | 'false'                                            | false    | When enabled, failed tests will be ignored and     |
+|                             |                                                    |          | won't make the build fail                          |
 +-----------------------------+----------------------------------------------------+----------+----------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
