@@ -48,8 +48,8 @@ For example for the Apache Flex SDK this would be something like this: ::
 	repositories {
 		ivy {
 			name 'Apache'
-			// pattern for url http://apache.cu.be/flex/4.9.0/binaries/apache-flex-sdk-4.9.0-bin.zip
-			artifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+			// pattern for url http://archive.apache.org/dist/flex/4.9.0/binaries/apache-flex-sdk-4.9.0-bin.zip
+			artifactPattern 'http://archive.apache.org/dist/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
 		}
 	}
 	
