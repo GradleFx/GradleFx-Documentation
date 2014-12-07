@@ -123,6 +123,9 @@ air
 | applicationDescriptor       | "src/main/actionscript/${project.name}.xml"        | false    | The location of the air descriptor file. Uses   |
 |                             |                                                    |          | the project name by convention for this file.   |
 +-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
+| mainSwfDir                  | root directory of the package                      | false    | The directory in the package where the output   |
+|                             |                                                    |          | swf file will be placed, for example 'foo/bar'  |
++-----------------------------+----------------------------------------------------+----------+-------------------------------------------------+
 | includeFileTrees            | null                                               | false    | A list of FileTree objects which reference the  |
 |                             |                                                    |          | files to include into the AIR package, like     |
 |                             |                                                    |          | application icons which are specified in your   |
@@ -201,6 +204,8 @@ airMobile
 | simulatorTargetDevice       |                                                    | false    | Specifies the device of the simulator. See the ``targetDevice`` property for more information.                                                                                                                                                                                  |
 +-----------------------------+----------------------------------------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | sampler                     | false                                              | false    | (iOS only, AIR 3.4 and higher) Enables the telemetry-based ActionScript sampler in iOS applications.                                                                                                                                                                            |
++-----------------------------+----------------------------------------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nonLegacyCompiler           | false                                              | false    | Which compiler to use during packaging. When true, it will enable the new compiler which is faster. More info: http://www.adobe.com/devnet/air/articles/ios-packaging-compiled-mode.html                                                                                        |
 +-----------------------------+----------------------------------------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^
