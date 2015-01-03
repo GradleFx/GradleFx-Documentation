@@ -22,8 +22,8 @@ Standard Properties
 |                             |                            |          | Primarily used in the IDE integration           |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | type                        | n/a                        | true     | Whether this is a library project or an         |
-|                             |                            |          | application. Possible values: 'swc', 'swf',     |
-|                             |                            |          | 'air' or 'mobile'                               |
+|                             |                            |          | application. Possible values: 'swc', 'swcAir'   |
+|                             |                            |          | , 'swf', 'air' or 'mobile'                      |
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 | srcDirs                     | ['src/main/actionscript']  | false    | An array of source directories                  |
 |                             |                            |          |                                                 |
