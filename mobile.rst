@@ -138,3 +138,24 @@ To launch a mobile project on a device/simulator: ::
 
  > launchMobile
  > launchSimulatorMobile
+
+---------------------------------
+Using native extensions (ANE)
+---------------------------------
+
+To use an ANE in your project you simple have to specify it as a dependency: ::
+
+    dependencies {
+       external group: 'org.mycompany', name: 'myane', version: '1.0', ext: 'ane'
+    }
+
+---------------------------------
+Choosing a packaging mode
+---------------------------------
+Adobe AIR now supports two packaging compiler modes, a legacy compiler (which is slower) and a new compiler. For more information on this new compiler see http://www.adobe.com/devnet/air/articles/ios-packaging-compiled-mode.html
+
+You can explicitly choose to use the new compiler by setting the ``nonLegacyCompiler`` property to true: ::
+
+    airMobile {
+        nonLegacyCompiler = true
+    }
