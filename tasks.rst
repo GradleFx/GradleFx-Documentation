@@ -103,10 +103,10 @@ Adding additional logic
 -------------------------
 Sometimes you may want to add custom logic right after or before a task has been executed. If you want to add some logging before or after the compile task, you can just do this: ::
 
-    compile.doFirst {
-		println "this gets printed before the compile task starts"
-    }
+compileFlex.doFirst {
+    println "this gets printed before the compile task starts"
+}
 
-	compile.doLast {
-		println "this gets printed after the compile task has been completed"
-	}
+compileFlex.doLast {
+    println "this gets printed after the compile task has been completed"
+}
