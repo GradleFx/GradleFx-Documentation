@@ -52,19 +52,19 @@ For example for the Apache Flex SDK this would be something like this: ::
 			artifactPattern 'http://archive.apache.org/dist/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
 		}
 		ivy {
-       		name 'Adobe Air SDK'
-        	artifactPattern Os.isFamily(Os.FAMILY_WINDOWS) ?
-            	'http://download.macromedia.com/air/win/download/[revision]/[module].zip' :
-            	'http://download.macromedia.com/air/mac/download/[revision]/[module].tbz2'
-    	}
+			name 'Adobe Air SDK'
+			artifactPattern 'http://download.macromedia.com/air/win/download/[revision]/[module].[ext]'
+		}
 	}
 	
-Always make sure to replace the artifact name, version and extension type with [module], [revision] and [ext] in the pattern, or make the extension dynamic as shown above for the AIR SDK.
+
+.. note:: Always make sure to replace the artifact name, version and extension type with [module], [revision] and [ext] in the pattern.
+
 Once you've defined the pattern you can define the dependencies like this: ::
 
     dependencies {
 	    flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.0', ext: Os.isFamily(Os.FAMILY_WINDOWS) ? 'zip' : 'tar.gz'
-	    airSDK  group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4'
+	    airSDK  group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: Os.isFamily(Os.FAMILY_WINDOWS) ? 'zip' : 'tbz2'
 	}
 	
 ^^^^^^^^^^^^^^^^^^^^^

@@ -396,7 +396,7 @@ Example usage (build.gradle)
     srcDirs = ['/src/main/flex']
 
     additionalCompilerOptions = [
-      '-player-version=10',
+      '-target-player=10',
       '-strict=false'
     ]
 
