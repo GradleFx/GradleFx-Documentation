@@ -100,8 +100,8 @@ Standard Properties
 +-----------------------------+----------------------------+----------+-------------------------------------------------+
 
  .. note:: All the available compiler options for the mxmlc and compc compiler are available
-      here `Compc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a92.html>`_
-      , `Mxmlc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a80.html>`_
+      here `Compc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a80.html>`_
+      , `Mxmlc options <http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf69084-7a92.html>`_
 
 --------------------
 Complex properties
