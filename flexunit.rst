@@ -125,3 +125,36 @@ Other customizations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 There are a lot more properties available on flexUnit.*, all these can be found on the properties description page.
+
+---------------
+FAQ
+---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+My unit tests hang and then end with a SocketTimeoutException, what is wrong?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This generally means some kind of incompatibility between the AIR, Flash and SWF version you're using. By default, Flex and AIR target a certain Flash Player version by compiling against a certain SWF version. To find out what is wrong, we need to gather some info first.
+
+First we need to find out against which SWF version your TestRunner SWF has been compiled by GradleFx. The Flex and AIR SDKs come with a handy tool to determine the SWF version of a SWF, called swfdump, which is located in the %FLEX_AIR_SDK%/bin folder. Execute this tool against the TestRunner.swf located in %YOUR_PROJECT%/build/reports folder. Stop its executing right after it starts, because we're only interested in the first part of its output (it outputs quite a lot). ::
+
+    > %FLEX_AIR_SDK%/bin/swfdump %YOUR_PROJECT%/build/reports/TestRunner.swf
+
+The output might look like this: ::
+
+    Adobe SWF Dump Utility
+    Version 2.0.0 build 354139
+    Copyright 2003-2012 Adobe Systems Incorporated. All rights reserved.
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!-- Parsing swf file:/C:/myproject/build/reports/TestRunner.swf -->
+    <swf xmlns="http://macromedia/2003/swfx" version="26" framerate="24.0" size="10000x7500" compressed="true" >
+
+So in this output we can see that this SWF uses version 26. This is something we can match against the `Flash Player and Adobe AIR compatibility list <http://www.adobe.com/devnet/articles/flashplayer-air-feature-list.html>`_ to find out whether this matches your AIR SDK. When I look up SWF version 26 I can see it's being used by default by AIR SDK 15.
+
+If this isn't the expected AIR SDK version, then you might be using a Flex version which targets a newer Flash Player version than your AIR SDK supports. So either you upgrade your AIR SDK to the version which matches the SWF version (see `Flash Player and Adobe AIR compatibility list <http://www.adobe.com/devnet/articles/flashplayer-air-feature-list.html>`_), or you specify the '-swf-version' compiler option to FlexUnit so that it matches the SWF version supported by your AIR SDK: ::
+
+    flexUnit {
+        additionalCompilerOptions = [
+            '-swf-version=25'
+        ]
+    }
