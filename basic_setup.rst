@@ -5,7 +5,7 @@ Basic Setup
 --------------
 Requirements
 --------------
-* Gradle v2.0
+* Gradle v2.4
 * Minimum Flex 4.x
 
 ----------------------------------
@@ -18,7 +18,7 @@ To use the plugin in your project, you'll have to add the following to your buil
             mavenCentral()
         }
         dependencies {
-            classpath group: 'org.gradlefx', name: 'gradlefx', version: '1.3.2'
+            classpath group: 'org.gradlefx', name: 'gradlefx', version: '1.3.3'
         }
     }
 
