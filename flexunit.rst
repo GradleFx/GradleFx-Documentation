@@ -44,14 +44,14 @@ GradleFx will by convention execute all the *Test.as classes in the test source 
 -------------------
 Running the tests
 -------------------
-You can run the FlexUnit tests by executing the "gradle test" command on the command-line.
+You can run the FlexUnit tests by executing the "gradle testFx" command on the command-line.
 
 -------------------
 Skipping the tests
 -------------------
-In case you want to execute a task which depends on the test task, but you don't want to execute the tests, then you can skip the test execution by excluding the test task with the '-x test' parameter. Like this: ::
+In case you want to execute a task which depends on the test task, but you don't want to execute the tests, then you can skip the test execution by excluding the test task with the '-x testFx' parameter. Like this: ::
 
-    > gradle build -x test
+    > gradle build -x testFx
 
 ---------------
 Customization

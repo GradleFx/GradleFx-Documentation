@@ -31,7 +31,7 @@ The GradleFx plugin adds the following tasks to your project:
 | createHtmlWrapper           | n/a                                                | Creates an HTML wrapper for the project's swf                 |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
-| test                        | copytestresources                                  | Runs the FlexUnit tests                                       |
+| testFx                      | copytestresources                                  | Runs the FlexUnit tests                                       |
 |                             |                                                    |                                                               |
 +-----------------------------+----------------------------------------------------+---------------------------------------------------------------+
 | asdoc                       | compile                                            | Creates asdoc documentation for your sources                  |
