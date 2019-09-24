@@ -31,4 +31,4 @@ You can specify your dependencies like this: ::
 Project Lib Dependencies
 --------------------------
 | You can also add dependencies to other projects, as described here in the Gradle documentation:
-| http://www.gradle.org/current/docs/userguide/userguide_single.html#sec:project_jar_dependencies
+| https://docs.gradle.org/2.4/userguide/multi_project_builds.html#sec:project_jar_dependencies
